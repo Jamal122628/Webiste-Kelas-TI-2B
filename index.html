@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Kelas TI-2B 2025</title>
+  
+  <link rel="icon" type="assets/logo_kelas.png" href="https://i.ibb.co/6R2MvF6b/image-def81d.png">
+  
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; transition: background-color 0.3s, color 0.3s; }
+    /* Custom Scrollbar tipis elegan untuk box struktur */
+    .custom-scroll::-webkit-scrollbar { width: 6px; }
+    .custom-scroll::-webkit-scrollbar-track { background: transparent; }
+    .custom-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 999px; }
+    .custom-scroll::-webkit-scrollbar-thumb:hover { background: #334155; }
+    
+    /* Utility classes untuk handle tema transisi manual */
+    .tema-gelap { --bg-utama: #020617; --text-utama: #f8fafc; --bg-kartu: rgba(15, 23, 42, 0.4); --border-kartu: rgba(30, 41, 59, 0.8); --bg-widget: rgba(2, 6, 23, 0.6); }
+    .tema-terang { --bg-utama: #f8fafc; --text-utama: #0f172a; --bg-kartu: rgba(255, 255, 255, 0.7); --border-kartu: rgba(226, 232, 240, 0.8); --bg-widget: rgba(255, 255, 255, 0.9); }
+  </style>
+</head>
+<body class="tema-gelap bg-[var(--bg-utama)] text-[var(--text-utama)] min-h-screen selection:bg-purple-500 selection:text-white pb-24 md:pb-6 flex flex-col justify-between">
+
+  <nav class="sticky top-0 z-50 backdrop-blur-xl bg-[var(--bg-utama)]/70 border-b border-slate-200/20 dark:border-slate-800/60 px-6 py-4 flex justify-between items-center w-full max-w-7xl mx-auto rounded-b-2xl transition-colors duration-300">
+    <div class="flex items-center gap-3">
+      <div class="w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg shadow-cyan-500/10 overflow-hidden p-0.5">
+        <img src="assets/logo_kelas.png" alt="Logo TI-1B" class="w-full h-full object-contain transform hover:scale-110 transition duration-300">
+      </div>
+      <div>
+        <h1 class="text-lg font-extrabold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent leading-none">TI-2B</h1>
+        <span class="text-[10px] text-slate-500 font-bold tracking-widest uppercase">Informatika '25</span>
+      </div>
+    </div>
+    
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-400">
+      <a href="#tentang" class="hover:text-amber-400 transition flex items-center gap-1.5"><i class="fa-solid fa-circle-info text-xs"></i> Tentang Kami</a>
+      <a href="#jadwal" class="hover:text-cyan-400 transition flex items-center gap-1.5"><i class="fa-solid fa-calendar-day text-xs"></i> Jadwal</a>
+      <a href="#struktur" class="hover:text-purple-400 transition flex items-center gap-1.5"><i class="fa-solid fa-sitemap text-xs"></i> Struktur</a>
+      <a href="#galeri" class="hover:text-pink-400 transition flex items-center gap-1.5"><i class="fa-solid fa-images text-xs"></i> Galeri</a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <button onclick="toggleTema()" class="w-10 h-10 rounded-xl border border-slate-300/30 bg-slate-500/10 hover:bg-slate-500/20 flex items-center justify-center text-amber-400 transition-all duration-300 active:scale-90 cursor-pointer" id="btn-tema">
+        <i class="fa-solid fa-sun text-lg transition-transform duration-500 rotate-0"></i>
+      </button>
+      
+      <button onclick="aktifkanNotif()" class="relative group overflow-hidden bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 px-4 py-2 rounded-xl text-xs md:text-sm font-semibold shadow-lg shadow-purple-900/30 transition-all duration-300 transform active:scale-95 cursor-pointer">
+        <i class="fa-solid fa-bell mr-2 animate-bounce"></i> Aktifkan Notif HP
+      </button>
+    </div>
+  </nav>
+
+  <main class="max-w-7xl mx-auto p-4 md:p-6 grid grid-cols-1 md:grid-cols-3 gap-6 flex-grow w-full">
+    
+    <section id="tentang" class="md:col-span-3 bg-[var(--bg-kartu)] border border-[var(--border-kartu)] rounded-3xl p-6 backdrop-blur-md grid grid-cols-1 md:grid-cols-3 gap-6 items-center transition-all duration-300">
+      <div class="md:col-span-2 space-y-3">
+        <div class="inline-flex items-center gap-2 bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs px-3 py-1 rounded-full font-semibold">
+          <i class="fa-solid fa-circle-info"></i> Kenalan Yuk!
+        </div>
+        <h2 class="text-xl md:text-2xl font-black tracking-tight">
+          Tentang <span class="bg-gradient-to-r from-amber-400 to-orange-500 bg-clip-text text-transparent">TI-2B 2025</span>
+        </h2>
+        <p class="text-sm text-slate-400 leading-relaxed">
+          Kami adalah keluarga besar program studi <strong class="text-[var(--text-utama)] font-semibold">Teknik Informatika kelas 2B</strong> angkatan 2025. Berisi kumpulan mahasiswa kreatif, calon *software engineer*, *data scientist*, dan praktisi IT masa depan yang solid, ambis, tapi tetap santai. Bersama-sama kami belajar menaklukkan baris kode, logika algoritma, dan membangun masa depan teknologi yang lebih baik.
+        </p>
+      </div>
+      <div class="bg-slate-500/5 border border-slate-500/10 rounded-2xl p-4 flex flex-col justify-between h-full">
+        <div>
+          <span class="text-[10px] text-slate-500 uppercase font-bold tracking-wider">Motto Kelas</span>
+          <p class="text-sm font-bold text-amber-400 italic mt-1">"Errors may slow us down, but giving up is not in our syntax."</p>
+        </div>
+        <div class="mt-4 pt-3 border-t border-slate-500/10 flex items-center justify-between text-xs text-slate-400">
+          <span>🎯 Fokus Utama:</span>
+          <span class="font-semibold text-[var(--text-utama)]">Solidaritas & Kreativitas</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="jadwal" class="md:col-span-1 bg-[var(--bg-kartu)] border border-[var(--border-kartu)] rounded-3xl p-5 md:p-6 backdrop-blur-md flex flex-col justify-between transition-all duration-300">
+      <div>
+        <div class="bg-[var(--bg-widget)] border border-[var(--border-kartu)] rounded-2xl p-3.5 mb-6 flex justify-between items-center transition-all duration-300">
+          <div>
+            <span class="text-[10px] uppercase font-bold tracking-wider text-cyan-400" id="widget-hari">Memuat...</span>
+            <p class="text-xs font-semibold mt-0.5 text-[var(--text-utama)]" id="widget-tanggal">--/--/----</p>
+          </div>
+          <div class="text-right">
+            <span class="text-[10px] text-slate-500 block">Status Cuaca</span>
+            <span class="text-xs font-bold text-slate-500 dark:text-slate-300"><i class="fa-solid fa-cloud-sun text-amber-400 mr-1"></i> Cerah Berawan</span>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center mb-6">
+          <div>
+            <h2 class="text-lg font-extrabold tracking-tight flex items-center gap-2">
+              <i class="fa-solid fa-calendar-day text-cyan-400"></i> Jadwal Kuliah
+            </h2>
+            <p class="text-xs text-slate-400 mt-0.5" id="label-hari">Memuat hari...</p>
+          </div>
+          <select id="pilih-hari" onchange="gantiHari(this.value)" class="bg-slate-500/10 border border-slate-500/20 rounded-xl px-2.5 py-1.5 text-xs font-medium text-[var(--text-utama)] focus:outline-none focus:border-cyan-400">
+            <option value="Senin">Senin</option>
+            <option value="Selasa">Selasa</option>
+            <option value="Rabu">Rabu</option>
+            <option value="Kamis">Kamis</option>
+            <option value="Jumat">Jumat</option>
+            <option value="Sabtu">Sabtu</option>
+          </select>
+        </div>
+
+        <div class="space-y-3" id="wadah-matkul">
+          </div>
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-slate-500/10 flex items-center justify-between text-[10px] text-slate-500">
+        <span>* Jadwal otomatis real-time</span>
+        <span class="text-cyan-400 font-medium animate-pulse" id="jam-realtime">00:00:00</span>
+      </div>
+    </section>
+
+    <section id="struktur" class="md:col-span-2 bg-[var(--bg-kartu)] border border-[var(--border-kartu)] rounded-3xl p-5 md:p-6 backdrop-blur-md flex flex-col justify-between transition-all duration-300">
+      <div>
+        <div class="flex flex-col sm:flex-row justify-between sm:items-center gap-3 mb-4">
+          <div>
+            <h2 class="text-lg md:text-xl font-extrabold tracking-tight flex items-center gap-2">
+              <i class="fa-solid fa-sitemap text-purple-400"></i> Anggota Kelas
+            </h2>
+            <p class="text-xs text-slate-400">Daftar mahasiswa aktif angkatan 2026</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="relative">
+              <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-500 text-xs"></i>
+              <input type="text" id="cari-mhs" oninput="cariMahasiswa(this.value)" placeholder="Cari nama..." class="bg-[var(--bg-widget)] border border-[var(--border-kartu)] rounded-xl pl-9 pr-4 py-1.5 text-xs text-[var(--text-utama)] focus:outline-none focus:border-purple-500 w-full sm:w-44 transition-all">
+            </div>
+            <span class="text-xs text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-full font-semibold border border-purple-500/20 whitespace-nowrap" id="total-mahasiswa">0 Orang</span>
+          </div>
+        </div>
+        
+        <div id="wadah-struktur" class="grid grid-cols-2 sm:grid-cols-3 gap-3 max-h-[445px] overflow-y-auto pr-1 custom-scroll p-0.5">
+          </div>
+      </div>
+    </section>
+
+    <section id="galeri" class="md:col-span-3 bg-[var(--bg-kartu)] border border-[var(--border-kartu)] rounded-3xl p-5 md:p-6 backdrop-blur-md transition-all duration-300">
+      <h2 class="text-lg md:text-xl font-extrabold mb-5 tracking-tight flex items-center gap-2">
+        <i class="fa-solid fa-images text-pink-400"></i> Galeri Kegiatan
+      </h2>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-square bg-slate-800 border border-slate-700/50">
+          <img src="/assets/IMG_0481.JPG" alt="Kegiatan CBO" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
+            <span class="text-xs font-bold text-white">Kegiatan CBO</span>
+            <p class="text-[10px] text-slate-300">Villa 4 Putri Sagalaherang  • 2026</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-square bg-slate-800 border border-slate-700/50">
+          <img src="assets/Bukber.jpeg" alt="Buka Bersama" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
+            <span class="text-xs font-bold text-white">Buka Bersama</span>
+            <p class="text-[10px] text-slate-300">Valet Cafe • 2026</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-square bg-slate-800 border border-slate-700/50">
+          <img src="assets/Us_S1.jpg" alt="US" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
+            <span class="text-xs font-bold text-white">Foto Bersama Setelah US Algoritma dan Pemrograman</span>
+            <p class="text-[10px] text-slate-300">Depang Lobby</p>
+          </div>
+        </div>
+        <div class="group relative overflow-hidden rounded-2xl aspect-video md:aspect-square bg-slate-800 border border-slate-700/50">
+          <img src="assets/Fotobersama.jpg" alt="Foto Bersama" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 p-3 flex flex-col justify-end">
+            <span class="text-xs font-bold text-white">Foto Bersama</span>
+            <p class="text-[10px] text-slate-300">Depan Gedung BAK</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="md:hidden fixed bottom-4 left-4 right-4 z-50 bg-[var(--bg-widget)]/80 border border-[var(--border-kartu)] backdrop-blur-lg rounded-2xl p-3 flex justify-around items-center shadow-2xl transition-all duration-300">
+    <a href="#tentang" class="flex flex-col items-center text-slate-400 hover:text-amber-400 transition">
+      <i class="fa-solid fa-circle-info text-lg"></i>
+      <span class="text-[10px] mt-1 font-medium">Tentang</span>
+    </a>
+    <a href="#jadwal" class="flex flex-col items-center text-slate-400 hover:text-cyan-400 transition">
+      <i class="fa-solid fa-calendar-day text-lg"></i>
+      <span class="text-[10px] mt-1 font-medium">Jadwal</span>
+    </a>
+    <a href="#struktur" class="flex flex-col items-center text-slate-400 hover:text-purple-400 transition">
+      <i class="fa-solid fa-sitemap text-lg"></i>
+      <span class="text-[10px] mt-1 font-medium">Struktur</span>
+    </a>
+    <a href="#galeri" class="flex flex-col items-center text-slate-400 hover:text-pink-400 transition">
+      <i class="fa-solid fa-images text-lg"></i>
+      <span class="text-[10px] mt-1 font-medium">Galeri</span>
+    </a>
+  </div>
+
+  <footer class="w-full max-w-7xl mx-auto border-t border-slate-500/10 px-6 py-6 mt-12 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-slate-500">
+    <div class="flex items-center gap-2">
+      <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+      <span>Website Server: <strong class="text-slate-400 font-medium">Active (GitHub / Netlify Pages)</strong></span>
+    </div>
+    <div class="text-center md:text-left">
+      &copy; 2025 <span class="text-slate-400 font-semibold">TI-2B Informatika</span>. Crafted for Solid Crew.
+    </div>
+    <div class="flex items-center gap-4 text-base">
+      <a href="#" class="hover:text-cyan-400 transition"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" class="hover:text-purple-400 transition"><i class="fa-brands fa-github"></i></a>
+      <a href="#" class="hover:text-red-400 transition"><i class="fa-solid fa-envelope"></i></a>
+    </div>
+  </footer>
+
+<script>
+  const SPREADSHEET_ID = '1GZrvmZaug83XGncr8IV_6V-H3uVAEmvTaeKSqqRaZIQ'; 
+  const SPREADSHEET_URL = `https://docs.google.com/spreadsheets/d/${SPREADSHEET_ID}/gviz/tq?tqx=out:json`;
+
+  let databaseJadwal = { Senin: [], Selasa: [], Rabu: [], Kamis: [], Jumat: [], Sabtu: [] };
+  const namaHari = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu"];
+  
+  let hariIni = namaHari[new Date().getDay()];
+  if (hariIni === "Minggu") { hariIni = "Senin"; }
+
+  function toggleTema() {
+    const body = document.body;
+    const btnIcon = document.querySelector('#btn-tema i');
+    
+    if (body.classList.contains('tema-gelap')) {
+      body.classList.replace('tema-gelap', 'tema-terang');
+      btnIcon.classList.replace('fa-sun', 'fa-moon');
+      btnIcon.classList.add('rotate-180');
+      localStorage.setItem('temaWebKelas', 'terang');
+    } else {
+      body.classList.replace('tema-terang', 'tema-gelap');
+      btnIcon.classList.replace('fa-moon', 'fa-sun');
+      btnIcon.classList.remove('rotate-180');
+      localStorage.setItem('temaWebKelas', 'gelap');
+    }
+    const keywordCari = document.getElementById('cari-mhs').value;
+    renderStrukturKelas(keywordCari);
+  }
+
+  if (localStorage.getItem('temaWebKelas') === 'terang') {
+    document.body.classList.replace('tema-gelap', 'tema-terang');
+    const btnIcon = document.querySelector('#btn-tema i');
+    if (btnIcon) {
+      btnIcon.classList.replace('fa-sun', 'fa-moon');
+      btnIcon.classList.add('rotate-180');
+    }
+  }
+
+  // ================= DATA STRUKTUR CARD MAHASISWA =================
+  const dataStruktur = [
+    { nama: "Bayu Setiawan", jabatan: "Ketua Kelas", foto: "" },
+    { nama: "Tiara Wega Agustia", jabatan: "Sekretaris", foto: "" },
+    { nama: "Syifa Nurazizah", jabatan: "Bendahara", foto: "" },
+    { nama: "Zaenal Arifin", jabatan: "Anggota", foto: "" },
+    { nama: "Tegar Mulyadi", jabatan: "Anggota", foto: "" },
+    { nama: "Fajar Miftahusy Syihab", jabatan: "Anggota", foto: "" },
+    { nama: "Muhamad Rifky Rizky Firdaus", jabatan: "Anggota", foto: "" },
+    { nama: "Firyal Adhwa Fauziyah", jabatan: "Anggota", foto: "" },
+    { nama: "Fathi Zaqyaldi", jabatan: "Anggota", foto: "" },
+    { nama: "Lisda Nurfitriani", jabatan: "Anggota", foto: "" },
+    { nama: "Fazri Refaldi", jabatan: "Anggota", foto: "" },
+    { nama: "Elisa Nuraeni", jabatan: "Anggota", foto: "" },
+    { nama: "Wandi Abdurohman", jabatan: "Anggota", foto: "" },
+    { nama: "Tajidin Nurkalbu", jabatan: "Anggota", foto: "" },
+    { nama: "Saqif Nibras Pranata", jabatan: "Anggota", foto: "" },
+    { nama: "Iqbal Nurkahfi", jabatan: "Anggota", foto: "" },
+    { nama: "Alawil Abror", jabatan: "Anggota", foto: "" },
+    { nama: "Wanda Lukmana", jabatan: "Anggota", foto: "" },
+    { nama: "Maulana Irvani", jabatan: "Anggota", foto: "" },
+    { nama: "Rizki Zakia Alfahreja", jabatan: "Anggota", foto: "" },
+    { nama: "Meysa Tifa Heryanti", jabatan: "Anggota", foto: "" },
+    { nama: "Mutiara Putri Nurfadhilah", jabatan: "Anggota", foto: "" },
+    { nama: "Alwi Yasiir", jabatan: "Anggota", foto: "" },
+    { nama: "Mohamad Nopa Pauji", jabatan: "Anggota", foto: "" },
+    { nama: "Muhamad Rafly Pasya", jabatan: "Anggota", foto: "" },
+    { nama: "Lutfi Firdaus", jabatan: "Anggota", foto: "" },
+    { nama: "Teuku Rafly Albarr", jabatan: "Anggota", foto: "" },
+    { nama: "Lexi Fadri Novagi", jabatan: "Anggota", foto: "" },
+    { nama: "Khaerina Riffatul Noor Amalia", jabatan: "Anggota", foto: "" },
+    { nama: "Nisrina Shafa Veliza", jabatan: "Anggota", foto: "" },
+    { nama: "Ade Irwan Sandika", jabatan: "Anggota", foto: "" },
+    { nama: "Mochammad Galih Gumelar", jabatan: "Anggota", foto: "" }
+  ];
+
+  function renderStrukturKelas(filterNama = "") {
+    const wadah = document.getElementById('wadah-struktur');
+    wadah.innerHTML = "";
+
+    const dataTersaring = dataStruktur.filter(orang => 
+      orang.nama.toLowerCase().includes(filterNama.toLowerCase())
+    );
+
+    document.getElementById('total-mahasiswa').innerText = `${dataTersaring.length} Orang`;
+
+    if (dataTersaring.length === 0) {
+      wadah.innerHTML = `<p class="col-span-3 text-xs text-slate-500 italic text-center py-12">Nama tidak ditemukan...</p>`;
+      return;
+    }
+
+    const isLight = document.body.classList.contains('tema-terang');
+
+    dataTersaring.forEach(orang => {
+      const kata = orang.nama.split(' ');
+      const inisial = kata.length > 1 ? (kata[0][0] + kata[1][0]).toUpperCase() : kata[0][0].toUpperCase();
+
+      const isInti = orang.jabatan !== "Anggota";
+      
+      let borderClass = "";
+      let textClass = "";
+      
+      if (isInti) {
+        borderClass = "border-purple-500/60 bg-purple-500/10 shadow-md shadow-purple-500/5";
+        textClass = "text-purple-600 dark:text-purple-400 font-bold";
+      } else {
+        borderClass = isLight 
+          ? "border-slate-200 bg-white shadow-sm" 
+          : "border-slate-800/80 bg-slate-900/60";
+        textClass = isLight ? "text-slate-800" : "text-slate-200";
+      }
+
+      wadah.innerHTML += `
+        <div class="group relative overflow-hidden ${borderClass} hover:border-purple-500/40 rounded-2xl p-4 flex flex-col items-center text-center transition-all duration-300 transform hover:-translate-y-1">
+          <div class="mb-3 relative">
+            ${orang.foto ? 
+              `<img src="${orang.foto}" alt="${orang.nama}" onerror="this.outerHTML='<div class=\'w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/10 border border-purple-500/30 flex items-center justify-center font-bold text-sm text-purple-400\'>${inisial}</div>'" class="w-14 h-14 rounded-full object-cover border-2 border-slate-700/80 group-hover:border-purple-400 transition-colors">` : 
+              `<div class="w-14 h-14 rounded-full bg-gradient-to-br from-purple-500/20 to-indigo-500/10 border border-purple-500/30 flex items-center justify-center font-bold text-sm text-purple-400">${inisial}</div>`
+            }
+          </div>
+          <div class="w-full min-w-0">
+            <h3 class="font-bold text-xs md:text-sm ${textClass} group-hover:text-purple-500 transition-colors truncate px-1">${orang.nama}</h3>
+            <p class="text-[10px] md:text-xs text-slate-400 font-medium mt-0.5">${orang.jabatan}</p>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function cariMahasiswa(keyword) {
+    renderStrukturKelas(keyword);
+  }
+
+  // ================= LOGIKA AMBIL JADWAL GOOGLE SHEETS =================
+  async function ambilDataDariGoogleSheets() {
+    const wadah = document.getElementById('wadah-matkul');
+    wadah.innerHTML = `<p class="text-sm text-slate-400 italic text-center py-6 animate-pulse"><i class="fa-solid fa-spinner animate-spin mr-2"></i> Sinkronisasi...</p>`;
+
+    try {
+      const response = await fetch(SPREADSHEET_URL);
+      const text = await response.text();
+      
+      const jsonData = JSON.parse(text.substring(47, text.length - 2));
+      const rows = jsonData.table.rows;
+
+      databaseJadwal = { Senin: [], Selasa: [], Rabu: [], Kamis: [], Jumat: [], Sabtu: [] };
+
+      rows.forEach((row) => {
+        const ambilTeks = (sel) => {
+          if (!sel) return '';
+          return sel.f ? sel.f.toString().trim() : (sel.v ? sel.v.toString().trim() : '');
+        };
+
+        let hariMentah = ambilTeks(row.c[0]);
+        const matkul   = ambilTeks(row.c[1]);
+        const sks      = ambilTeks(row.c[2]);
+        const jam      = ambilTeks(row.c[3]);
+        const mulai    = ambilTeks(row.c[4]);
+        const dosen    = ambilTeks(row.c[5]);
+
+        if (hariMentah === "Hari" || hariMentah === "") return;
+
+        const hari = hariMentah.charAt(0).toUpperCase() + hariMentah.slice(1).toLowerCase();
+
+        if (databaseJadwal[hari]) {
+          databaseJadwal[hari].push({ matkul, sks, dosen, jam, mulai });
+        }
+      });
+
+      renderJadwal(hariIni);
+
+    } catch (error) {
+      console.error("🚨 ERROR:", error);
+      wadah.innerHTML = `<p class="text-xs text-red-400 italic text-center py-6"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Gagal memuat jadwal.</p>`;
+    }
+  }
+
+  function renderJadwal(hari) {
+    document.getElementById('label-hari').innerText = `Hari ${hari}`;
+    document.getElementById('pilih-hari').value = hari;
+    
+    const wadah = document.getElementById('wadah-matkul');
+    wadah.innerHTML = ""; 
+    
+    const daftarMatkul = databaseJadwal[hari] || [];
+    
+    if(daftarMatkul.length === 0) {
+      wadah.innerHTML = `<p class="text-xs text-slate-500 italic text-center py-8">Tidak ada jadwal kuliah. Libur! 🎉</p>`;
+      return;
+    }
+
+    const isLight = document.body.classList.contains('tema-terang');
+
+    daftarMatkul.forEach(item => {
+      let bgBox = isLight ? "bg-white border-slate-200" : "bg-slate-900/80 border-slate-800";
+      let textMatkul = isLight ? "text-slate-800" : "text-slate-100";
+
+      wadah.innerHTML += `
+        <div class="group p-3.5 ${bgBox} rounded-xl border hover:border-purple-500/40 flex justify-between items-center transition-all duration-300">
+          <div class="space-y-0.5 min-w-0 flex-1 pr-2">
+            <h3 class="font-bold text-xs md:text-sm ${textMatkul} group-hover:text-cyan-500 transition-colors truncate">${item.matkul}</h3>
+            <p class="text-[10px] text-slate-400 truncate"><i class="fa-solid fa-user-tie mr-1 text-[9px]"></i> ${item.dosen}</p>
+          </div>
+          <div class="text-right shrink-0 space-y-1">
+            <span class="inline-block bg-cyan-500/10 text-cyan-500 dark:text-cyan-400 text-[9px] px-1.5 py-0.5 rounded-full font-bold">${item.sks} SKS</span>
+            <p class="text-[10px] text-slate-500 dark:text-slate-300 font-medium"><i class="fa-regular fa-clock mr-1 text-[9px]"></i> ${item.jam}</p>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function gantiHari(hariTerpilih) {
+    renderJadwal(hariTerpilih);
+  }
+
+  function aktifkanNotif() {
+    if (!('Notification' in window)) {
+      alert('Browser tidak mendukung fitur notifikasi.');
+      return;
+    }
+    Notification.requestPermission().then(p => {
+      if (p === 'granted') {
+        new Notification("Notifikasi Aktif! 🔔");
+        setInterval(cekWaktuKuliah, 60000);
+      } else if (p === 'denied') {
+        alert("Akses diblokir browser. Izinkan melalui pengaturan URL di browser kamu ya! 🔓");
+      }
+    });
+  }
+
+  function cekWaktuKuliah() {
+    const sekarang = new Date();
+    const hariSekarang = namaHari[sekarang.getDay()];
+    const jamSekarang = sekarang.getHours().toString().padStart(2, '0');
+    const menitSekarang = sekarang.getMinutes().toString().padStart(2, '0');
+    const waktuString = `${jamSekarang}:${menitSekarang}`;
+
+    const jadwalHariIni = databaseJadwal[hariSekarang];
+    if (jadwalHariIni) {
+      jadwalHariIni.forEach(matkul => {
+        if (matkul.mulai === waktuString) {
+          new Notification("Kelas Dimulai! 🚀", { body: `Mata kuliah "${matkul.matkul}" sudah dimulai.` });
+        }
+      });
+    }
+  }
+
+  function updateWidgetWaktu() {
+    const opsiHari = { weekday: 'long' };
+    const opsiTanggal = { day: 'numeric', month: 'long', year: 'numeric' };
+    const skr = new Date();
+    
+    document.getElementById('widget-hari').innerText = skr.toLocaleDateString('id-ID', opsiHari);
+    document.getElementById('widget-tanggal').innerText = skr.toLocaleDateString('id-ID', opsiTanggal);
+    document.getElementById('jam-realtime').innerText = skr.toLocaleTimeString('id-ID');
+  }
+
+  setInterval(updateWidgetWaktu, 1000);
+
+  // Jalankan Fungsi Awal
+  updateWidgetWaktu();
+  renderStrukturKelas();
+  ambilDataDariGoogleSheets();
+</script>
+</body>
+</html>
